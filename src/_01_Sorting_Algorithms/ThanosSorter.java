@@ -45,6 +45,47 @@ public class ThanosSorter extends Sorter {
      */
     @Override
     void sort(int[] arr, SortingVisualizer display) {
-        
+    	boolean isSorted = false;
+    	int count;
+    	int snapCheck;
+    int thanosLength = arr.length;
+    	while (!isSorted) {
+    		count = 0;
+    		//is sorted? isnt checkign properly
+    		 for (int i = 0; i < arr.length-1; i++) {
+    			 
+    			 if (arr[i] != 0) {
+    				 
+    				 for (int j = i+1; j < arr.length; j++) {
+    					 if (arr[j] != 0) {
+    						 if (arr[i] < arr[j]) {
+    	    	        			count++;
+    	    	        			j = arr.length;
+    	    	        	}
+    					 }
+    				 }
+    				 
+    			 }
+    	        	
+    	        }
+    		 if (count == thanosLength+1) {
+    			 isSorted = true;
+    			 break;
+    		 }
+    		 //thanos snap
+    		 snapCheck = 0;
+    		 thanosLength /=2;
+    		 while (snapCheck != thanosLength) {
+    			 int random = (int) (Math.random() * arr.length);
+    			 if(arr[random] != 0) {
+    					arr[random] = 0;
+    					snapCheck++;
+    					 display.updateDisplay();
+    			 }
+			}
+    		 
+    		
     }
+    	System.out.print(arr);
+}
 }
