@@ -8,10 +8,20 @@ import java.util.List;
 public class Algorithms {
     
     public static String multiply(int num1, int num2) {
-        return null;
+    
+        return num1+ " x " +num2 + " = " + (num1*num2);
+    }
+    public static boolean isPrime(int num) {
+		return false;
+    	//fix is prime and make sure to do all tests
     }
     
     public static int findBrokenEgg(List<String> eggs) {
-        return 0;
+    	for (int i = 0; i < eggs.size(); i++) {
+			if(eggs.get(i).equals("Broken")) {
+				return i;
+			}
+		}
+        return -1;
     }
 }
